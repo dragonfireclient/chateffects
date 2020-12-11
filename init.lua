@@ -16,9 +16,9 @@ function chateffects.send(message)
 	end
 	
 	local use_chat_color = minetest.settings:get_bool("use_chat_color")
-	local color = minetest.settings:get("chat_color")
+	local color = minetest.settings:get("chat_color") or "rainbow"
 
-	if use_chat_color and color then
+	if use_chat_color then
 		local msg
 		if color == "rainbow" then
 			msg = minetest.rainbow(message)
